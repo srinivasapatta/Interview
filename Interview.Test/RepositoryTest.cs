@@ -9,7 +9,7 @@ namespace Interview.Test
     public class RepositoryTest
     {
         [TestMethod]
-        public void TestGetAll()
+        public void Test_GetAll_ReturnsCountZero_WhenNoData()
         {
             var repository = new Repository<TestStorable<int>, int>();
 
