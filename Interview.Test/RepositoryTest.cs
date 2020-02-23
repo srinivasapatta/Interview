@@ -17,5 +17,16 @@ namespace Interview.Test
 
             Assert.AreEqual(0, result.Count());
         }
+
+        [TestMethod]
+        public void Test_Save_NewItem()
+        {
+            var repository = new Repository<TestStorable<int>, int>();
+            TestStorable<int> newItemToBeSaved = new TestStorable<int> { Id = 1, Data = "FirstItem" };
+            repository.Save(newItemToBeSaved);
+            IEnumerable<TestStorable<int>> result = repository.GetAll();
+
+            Assert.IsTrue((result.Contains(newItemToBeSaved)));
+        }
     }
 }
