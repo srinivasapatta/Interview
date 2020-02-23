@@ -34,6 +34,8 @@ namespace Interview
 
         public void Save(T item)
         {
+            Delete(item.Id);
+
             entities.Add(item);
         }
     }
