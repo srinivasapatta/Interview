@@ -17,7 +17,9 @@ namespace Interview
         }
         public void Delete(I id)
         {
-            throw new NotImplementedException();
+            var item = Get(id);
+
+            entities.Remove(item);
         }
 
         public T Get(I id)
