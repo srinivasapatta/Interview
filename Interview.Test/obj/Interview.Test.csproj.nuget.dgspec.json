@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Srinivas\\TestProcess\\ActualTestEasyJet\\Interview\\Interview\\Interview.csproj": {
+                "projectPath": "C:\\Srinivas\\TestProcess\\ActualTestEasyJet\\Interview\\Interview\\Interview.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -75,6 +79,17 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Srinivas\\TestProcess\\ActualTestEasyJet\\Interview\\Interview\\Interview.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Srinivas\\TestProcess\\ActualTestEasyJet\\Interview\\Interview\\Interview.csproj",
+        "projectName": "Interview",
+        "projectPath": "C:\\Srinivas\\TestProcess\\ActualTestEasyJet\\Interview\\Interview\\Interview.csproj"
+      },
+      "frameworks": {
+        "net461": {}
       }
     }
   }
