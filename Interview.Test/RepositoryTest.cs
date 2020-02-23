@@ -56,5 +56,39 @@ namespace Interview.Test
 
             Assert.AreEqual(null, result);
         }
+
+        [TestMethod]
+        public void Test_Delete_ExistingId_RemovesExpectedItem()
+        {
+            var repository = new Repository<TestStorable<int>, int>();
+
+            repository.Save(new TestStorable<int> { Id = 1, Data = "FirstItem" });
+            repository.Save(new TestStorable<int> { Id = 2, Data = "SecondItem" });
+            repository.Save(new TestStorable<int> { Id = 3, Data = "ThirdItem" });
+
+            repository.Delete(2);
+
+            IEnumerable<TestStorable<int>> result = repository.GetAll();
+
+            Assert.AreEqual(2, result.Count());
+
+            Assert.IsFalse((result.Contains(new TestStorable<int> { Id = 2, Data = "SecondItem" })));
+        }
+
+        [TestMethod]
+        public void Test_Delete_NotExistingId_NoChangeToItems()
+        {
+            var repository = new Repository<TestStorable<int>, int>();
+
+            repository.Save(new TestStorable<int> { Id = 1, Data = "FirstItem" });
+            repository.Save(new TestStorable<int> { Id = 2, Data = "SecondItem" });
+            repository.Save(new TestStorable<int> { Id = 3, Data = "ThirdItem" });
+
+            repository.Delete(4);
+
+            IEnumerable<TestStorable<int>> result = repository.GetAll();
+
+            Assert.AreEqual(3, result.Count());
+        }
     }
 }
