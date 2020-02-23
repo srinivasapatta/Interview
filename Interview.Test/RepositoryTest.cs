@@ -90,5 +90,22 @@ namespace Interview.Test
 
             Assert.AreEqual(3, result.Count());
         }
+
+        [TestMethod]
+        public void Test_Save_WithExistingId_ReplacesItem()
+        {
+            var repository = new Repository<TestStorable<int>, int>();
+
+            repository.Save(new TestStorable<int> { Id = 1, Data = "FirstItem" });
+            repository.Save(new TestStorable<int> { Id = 2, Data = "SecondItem" });
+            repository.Save(new TestStorable<int> { Id = 2, Data = "ThirdItem" });
+
+            IEnumerable<TestStorable<int>> result = repository.GetAll();
+
+            Assert.AreEqual(2, result.Count());
+
+            TestStorable<int> item = repository.Get(2);
+            Assert.AreEqual("ThirdItem", item.Data);
+        }
     }
 }
