@@ -22,7 +22,7 @@ namespace Interview
 
         public T Get(I id)
         {
-            throw new NotImplementedException();
+            return entities.Find(r => r.Id.Equals(id));
         }
 
         public IEnumerable<T> GetAll()
