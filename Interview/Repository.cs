@@ -19,7 +19,8 @@ namespace Interview
         {
             var item = Get(id);
 
-            entities.Remove(item);
+            if(item != null)
+                entities.Remove(item);
         }
 
         public T Get(I id)
