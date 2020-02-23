@@ -32,7 +32,7 @@ namespace Interview
 
         public void Save(T item)
         {
-            throw new NotImplementedException();
+            entities.Add(item);
         }
     }
 }
